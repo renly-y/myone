@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>notepad</title>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style><body>
+<div>&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="en"&gt;<br>
+&lt;head&gt;<br>
+&nbsp; &lt;meta charset="UTF-8" /&gt;<br>
+&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;<br>
+&nbsp; &lt;title&gt;Thank You&lt;/title&gt;<br>
+&nbsp; &lt;style&gt;<br>
+&nbsp;&nbsp;&nbsp; * {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; body {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100vw;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100vh;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; overflow: hidden;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #fff9fc;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; place-items: center;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: Georgia, 'Times New Roman', Times, serif;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; /* &#20248;&#38597;&#33521;&#25991;&#23383;&#20307;&#65288;&#32654;&#20307;&#65289; */<br>
+&nbsp;&nbsp;&nbsp; .thank-you {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: min(16vw, 180px);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-style: italic;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 500;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #ff7b9c;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing: 0.05em;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index: 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user-select: none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-shadow: 0 0 12px rgba(255, 123, 156, 0.15);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; #hearts {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inset: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointer-events: none;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; .heart {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #ffccd5;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: rotate(45deg);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation: float 8s linear infinite;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opacity: 0.6;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; .heart::before,<br>
+&nbsp;&nbsp;&nbsp; .heart::after {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: '';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 100%;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: inherit;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 50%;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; .heart::before { top: -50%; left: 0; }<br>
+&nbsp;&nbsp;&nbsp; .heart::after { left: -50%; top: 0; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; @keyframes float {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0% {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: rotate(45deg) translate(0, 110vh) scale(0.8);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opacity: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10% { opacity: 0.6; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 90% { opacity: 0.5; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100% {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: rotate(45deg) translate(var(--tx), -110vh) scale(var(--scale));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opacity: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp; &lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp; &lt;div id="hearts"&gt;&lt;/div&gt;<br>
+&nbsp; &lt;h1 class="thank-you"&gt;thankyou&lt;/h1&gt;<br>
+<br>
+&nbsp; &lt;script&gt;<br>
+&nbsp;&nbsp;&nbsp; const container = document.getElementById('hearts');<br>
+&nbsp;&nbsp;&nbsp; const used = new Set();<br>
+<br>
+&nbsp;&nbsp;&nbsp; function getSafePos() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; let gx, gy, key;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (let i = 0; i &lt; 25; i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gx = Math.floor(Math.random() * 12);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gy = Math.floor(Math.random() * 12);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key = gx + "," + gy;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!used.has(key)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; used.add(key);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(() =&gt; used.delete(key), 8000);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return { x: gx * 8.33, y: gy * 8.33 };<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return { x: Math.random() * 100, y: Math.random() * 100 };<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; function createHeart() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const p = getSafePos();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // &#36991;&#24320;&#25991;&#23383;&#20013;&#24515;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (Math.abs(p.x - 50) &lt; 34 &amp;&amp; Math.abs(p.y - 50) &lt; 24) return;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const h = document.createElement('div');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.className = 'heart';<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const size = Math.random() * 14 + 10;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const tx = (Math.random() - 0.5) * 140;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const scale = (Math.random() * 0.4 + 0.8).toFixed(2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const dur = Math.random() * 3 + 6;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.width = h.style.height = size + 'px';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.left = p.x + '%';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.top = p.y + '%';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.setProperty('--tx', tx + 'px');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.setProperty('--scale', scale);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.animationDuration = dur + 's';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h.style.animationDelay = Math.random() * 2 + 's';<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; container.appendChild(h);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setTimeout(() =&gt; h.remove(), dur * 1000);<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; setInterval(createHeart, 320);<br>
+&nbsp; &lt;/script&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</div>
+</body>
+</html>
