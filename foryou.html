@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>to 灿</title>
+  <style>
+    /* 整体页面设置 */
+    body {
+      /* 可爱字体设置：优先华康少女体，无则用系统圆润字体 */
+      font-family: "华康少女体", "Comic Sans MS", "Marker Felt", "Arial Rounded MT Bold", sans-serif;
+      background: url('https://img1.baidu.com/it/u=1033380183,2868323625&fm=253&fmt=auto&app=138&f=JPEG?w=1280&h=853') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden; /* 隐藏横向滚动条 */
+    }
+
+    /* 信纸容器改为可滚动 */
+    .letter-container {
+      max-width: 800px;
+      margin: 30px auto; /* 上下边距固定，左右居中 */
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: fadeIn 1.5s ease-in-out;
+      
+      /* 关键修改：设置滚动容器 */
+      min-height: 90vh; /* 确保容器高度接近屏幕，方便滑动 */
+      overflow-y: auto; /* 垂直方向可滚动 */
+      scrollbar-width: thin; /* 窄滚动条 */
+      scrollbar-color: #8e24aa transparent; /* 滚动条颜色 */
+    }
+
+    /* 滚动条美化（Webkit内核浏览器） */
+    .letter-container::-webkit-scrollbar {
+      width: 8px; /* 滚动条宽度 */
+    }
+    .letter-container::-webkit-scrollbar-track {
+      background: transparent; /* 轨道透明 */
+    }
+    .letter-container::-webkit-scrollbar-thumb {
+      background-color: #8e24aa; /* 滚动条颜色 */
+      border-radius: 4px; /* 圆角 */
+    }
+
+    h1 {
+      color: #8e24aa;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2em;
+    }
+
+    p {
+      color: #424242;
+      font-size: 1.1em;
+      letter-spacing: 0.8px;
+      margin-bottom: 25px; /* 段落间距加大，方便阅读 */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="letter-container">
+    <h1>  </h1>
+    <p>to灿</p>
+    <p>见字如晤，不知道你看到这个是什么心情，其实，很多次，我很想给你写信，写我对你的付出的感受，写我对你的感觉，很多很多，那些总是在你给我感动时没法用语言说出口的话，我都想写。但是每次打开界面我又总是无从下笔，我总是想，写电子的会不会太草率？写纸质的字体会不会太潦草？我想写的太多太多，我会不会写漏？我会不会没办法更深刻的表达？我一直以这些“借口”，迟迟未曾动笔。但是，我也知道，不行的，每次总是你开口，而我像是无动于衷，但是我想告诉你，不是的，只是我当时表达不出来。</p >
+    <p>或者说，我确实是入如机的一个人，在我脑子里面没办法在当时说出我的感受，每次你对我付出之后我的沉默和傻笑，是我内心的动容，我表达不出来，但是我不想你觉得我并没有任何波澜，我很感动，也很感谢，我动容于每次你对我付出的时间，精力，情绪和金钱，我都很感激，你是这样真心实意的对我付出。</p >
+    <p>我确实是一个不太善于表达的人，谢谢你对我所有的包容和偏爱。我很多次觉得，很幸运我能遇到你，能和你这么亲密，是我来到湖中大最大的安慰。在我刚来湖中大的时候，我总是没有归属感，一种孤立无援和陌生感孤独感环绕着我，我当时总是有点后悔为什么偏偏要离开贵州，离开我熟悉的环境，湖南的高温和周围人的不熟悉不同频让我一度后悔。但是你出现了，充实了我在湖中大无聊的生活。说实话，我一开始觉得我们并不会有很长远的联系，我见过太多太多第一面很热情的人在后面遇见连打招呼都视而不见，但是不可否认，你当时给我的感觉很真诚，很有活力，当然现在也很有活力，直到我们加到联系方式的时候我都不觉得我们会很长远，我当时觉得可能过了军训我们应该就不会有什么联系了，但是并没有，我们一直到了今天。谢谢你。谢谢你进入了我的世界，很多次，想起来你，我都很庆幸，庆幸湖南有你，湖中大有你。</p >
+    <p>我们是这么的相似。我们能懂对方的一些点，我们对情绪都是这么的敏感，这么的细腻，一些别人没有在意的细节，一些别人不懂的点，我们都这么的理解，对一些情感的表达，我们同样羞于启齿。我们又是这么的不同，你比较外向活泼，我比较内向收敛，你相对主动，我相对被动，你社交圈很广，我不善于社交。可是，这些造就了你我，我们是这样亲密。无论相似还是不同，都不妨碍我们的一些同频，也不妨碍我们对彼此的珍视。</p >
+    <p>洋洋洒洒写了这么一点，还有好多话都没有写出来，好像啥都没说，梦到哪句写哪句了，但是，我想告诉你，无论发生什么，你都是我在这个学校最在意的人，最好最好的朋友，我的情绪会因为你而低落，也会因为你而热烈，希望我们的友谊天长地久，谢谢你，最好的邝灿。</p >
+    <!-- 增加空段落，方便测试滚动效果 -->
+    <p></p ><p></p ><p></p ><p></p ><p></p >
+  </div>
+</body>
+
+</html>
